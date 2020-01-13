@@ -1,0 +1,45 @@
+var myarray = ["card1", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "card11", "card12", "card13", "card14", "card15"];
+var numberOfTestimonials = 3;
+
+function getRandom() {
+  for (var i = 1; i <= numberOfTestimonials; i++) {
+    var randomIndex = RandomDiv();
+    $('.card').append($('#' + myarray[randomIndex]));
+    myarray.splice(randomIndex, 1);
+  }
+}
+$('#Button').on('click', function() {
+  getRandom();
+});
+
+function RandomDiv() {
+  return Math.floor(Math.random() * myarray.length);
+}
+
+.cards {
+  display: inline-block;
+  margin: 5px
+}
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<div class="card">
+  <div style="font-size: 24px" style="display; inline-block">
+    <div class="cards" id="card1"><span style="color: #C23B22">2♦</span></div>
+    <div class="cards" id="card2"><span style="color: #C23B22">2♥</span></div>
+    <div class="cards" id="card3">2♣</div>
+    <div class="cards" id="car4">2♠</div>
+    <div class="cards" id="card5"><span style="color: #C23B22">3♦</span></div>
+    <div class="cards" id="card6"><span style="color: #C23B22">3♥</span></div>
+    <div class="cards" id="card7">3♠</div>
+    <div class="cards" id="card8">3♣</div>
+    <div class="cards" id="card9"><span style="color: #C23B22">4♦</span></div>
+    <div class="cards" id="card10"><span style="color:#C23B22">4♥</span></div>
+    <div class="cards" id="card11">4♣</div>
+    <div class="cards" id="card12">4♠</div>
+    <div class="cards" id="card13"><span style="color:#C23B22">5♦</span></div>
+    <div class="cards" id="card14"><span style="color:#C23B22">5♥</span></div>
+    <div class="cards" id="card15">5♣</div>
+  </div>
+</div>
+<input type="button" id="Button" value="Random" />
